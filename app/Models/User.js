@@ -21,7 +21,7 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
 
-  file () {
+  avatar () {
     return this.belongsTo('App/Models/File')
   }
 }

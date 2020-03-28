@@ -6,7 +6,7 @@ class UserController {
   async index ({ request }) {
     const users = await User
       .query()
-      .with('file')
+      .with('avatar')
       .orderBy('birthday')
       .fetch()
     return users
@@ -14,17 +14,17 @@ class UserController {
 
   async store ({ request }) {
     const data = request.only([
-      'username',
       'email',
       'password',
+      'name',
       'description',
       'birthday',
-      'file_id',
+      'avatar_id',
       'admin'
     ])
 
     const user = await User.create(data)
-    await user.load('file')
+    await user.load('avatar')
 
     return user
   }
