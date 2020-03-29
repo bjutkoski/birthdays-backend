@@ -22,7 +22,7 @@ class User extends Model {
   }
 
   avatar () {
-    return this.belongsTo('App/Models/File')
+    return this.belongsTo('App/Models/File', 'avatar_id', 'id')
   }
 }
 
