@@ -1,5 +1,7 @@
 'use strict'
 
+const Factory = use('Factory')
+const { format } = use('date-fns')
 const User = use('App/Models/User')
 
 class UserSeeder {
@@ -11,6 +13,19 @@ class UserSeeder {
       birthdate: '1970-01-01',
       admin: true
     })
+
+    Factory.blueprint('App/Models/User', async (faker) => {
+      return {
+        name: faker.name(),
+        email: faker.email(),
+        password: faker.password(),
+        birthdate: format(faker.birthday(), 'yyyy-MM-dd')
+      }
+    })
+
+    await Factory
+      .model('App/Models/User')
+      .createMany(20)
   }
 }
 
