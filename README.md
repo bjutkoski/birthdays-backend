@@ -1,28 +1,25 @@
-# Adonis API application
+# Bdays - Backend (NodeJS)
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+NodeJS application to manage birthdays.
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+- [AdonisJS](https://github.com/adonisjs) - AdonisJs is a Node.js web framework with breath of fresh air and drizzle of elegant syntax on top of it.
 
-## Setup
-
-Use the adonis command to install the blueprint
+### Installation
 
 ```bash
-adonis new yardstick --api-only
+npm install (or yarn)
 ```
 
-or manually clone the repo and then run `npm install`.
+### Running
 
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
+```bash
+npx adonis migration:run (or yarn adonis migration:run)
+npx adonis seed (or yarn adonis seed)
+npx adonis serve --dev (or yarn adonis serve --dev)
 ```
+
+### Frontend
+
+- [Bdays](https://github.com/bjutkoski/birthdays-frontend) - React application to manage birthdays.
+
+
