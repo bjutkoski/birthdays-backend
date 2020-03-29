@@ -7,7 +7,7 @@ class UserController {
     const users = await User
       .query()
       .with('avatar')
-      .orderBy('birthday')
+      .orderBy('name')
       .fetch()
     return users
   }
@@ -25,7 +25,7 @@ class UserController {
       'password',
       'name',
       'description',
-      'birthday',
+      'birthdate',
       'avatar_id',
       'admin'
     ])
@@ -44,7 +44,7 @@ class UserController {
       'password',
       'name',
       'description',
-      'birthday',
+      'birthdate',
       'avatar_id',
       'admin'
     ])

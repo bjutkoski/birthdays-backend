@@ -5,6 +5,10 @@ const Model = use('Model')
 const Env = use('Env')
 
 class File extends Model {
+  static get visible () {
+    return ['id', 'url']
+  }
+
   static get computed () {
     return ['url']
   }
