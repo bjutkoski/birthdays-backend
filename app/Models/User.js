@@ -8,7 +8,11 @@ const Hash = use('Hash')
 
 class User extends Model {
   static get hidden () {
-    return ['password', 'created_at', 'updated_at']
+    return ['password', 'created_at', 'updated_at', 'admin']
+  }
+
+  static get computed () {
+    return ['isAdmin']
   }
 
   static boot () {
@@ -23,6 +27,10 @@ class User extends Model {
 
   tokens () {
     return this.hasMany('App/Models/Token')
+  }
+
+  getIsAdmin ({ admin }) {
+    return admin === 1
   }
 
   avatar () {
