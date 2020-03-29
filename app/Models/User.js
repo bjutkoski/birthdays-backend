@@ -8,7 +8,7 @@ const Hash = use('Hash')
 
 class User extends Model {
   static get hidden () {
-    return ['password', 'created_at', 'updated_at', 'admin']
+    return ['password', 'created_at', 'updated_at']
   }
 
   static get computed () {
