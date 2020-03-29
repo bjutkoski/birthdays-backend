@@ -7,6 +7,14 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
+  static get hidden () {
+    return ['password', 'created_at', 'updated_at']
+  }
+
+  static get computed () {
+    return ['isAdmin']
+  }
+
   static boot () {
     super.boot()
 
@@ -21,8 +29,12 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
 
+  getIsAdmin ({ admin }) {
+    return admin === 1
+  }
+
   avatar () {
-    return this.belongsTo('App/Models/File')
+    return this.belongsTo('App/Models/File', 'avatar_id', 'id')
   }
 }
 

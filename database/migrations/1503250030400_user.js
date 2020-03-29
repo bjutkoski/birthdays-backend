@@ -11,7 +11,7 @@ class UserSchema extends Schema {
       table.string('password', 60).notNullable()
       table.string('name', 80).notNullable()
       table.text('description')
-      table.timestamp('birthday')
+      table.timestamp('birthdate')
       table
         .integer('avatar_id')
         .unsigned()
